@@ -1,0 +1,46 @@
+html {
+    font-family: LittleGuy;
+    font-size: 100%;
+    letter-spacing: 1;
+    text-align: center;
+    background: var(--color-background);
+}
+
+
+
+@font-face { font-family: LittleGuy; src: url('fonts/LittleGuy.ttf'); }
+
+
+
+.scontain {
+    background-color: chartreuse;
+    padding: 3%;
+    margin: 2%;
+    height: 22%
+}
+
+
+:root, 
+[data-selected-theme="grunge"] { 
+  --color-background: #A4F3A2; 
+  --color-text: #034435; 
+  --color-accent: #00CC66; 
+}
+
+[data-selected-theme="pastel"] {
+  --color-background: #55dde0;
+  --color-text: #2B4150;
+  --color-accent: #00D4E7;
+} 
+
+[data-selected-theme="kidcore"] { 
+  --color-background: #DFB2F4;
+  --color-text: #463546;
+  --color-accent: #F06EFC;
+}
+
+[data-selected-theme="brainrot"] {
+  --color-background: #FA7D61;
+  --color-text: #1E1E24;
+  --color-accent: #F3601C;
+}
