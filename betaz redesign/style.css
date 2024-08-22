@@ -3,7 +3,7 @@ html {
     font-size: 100%;
     letter-spacing: 1;
     text-align: center;
-    background: var(--color-background);
+    background-image: var(--img-background);
 }
 
 
@@ -13,34 +13,87 @@ html {
 
 
 .scontain {
-    background-color: chartreuse;
+    background-image: var(--img-background-secondary);
+    border: var(--main-border);
     padding: 3%;
     margin: 2%;
     height: 22%
 }
 
+.scontain-trans {
+    padding: 3%;
+    margin: 2%;
+    height: 22%
+}
+
+.bigcontain {
+    border: var(--big-border);
+    box-shadow: var(--big-shadow);
+    background-image: var(--big-texture);
+    background-color: var(--color-big-background);
+}
+
+.framin {
+    border: var(--main-border);
+    background-color: var(--color-big-background);
+}
+
+.bigheader {
+    background: var(--header-img);
+    border: var(--main-border);
+    padding: 3%;
+    margin: 2%;
+    height: 22%
+}
 
 :root, 
 [data-selected-theme="grunge"] { 
-  --color-background: #A4F3A2; 
+  --img-background: url('imgs/backgrounds/greenbg.gif'); 
+  --img-background-secondary: url('imgs/backgrounds/secgreenbg.gif');
+  --main-border: ridge 5px #474224;
+  --big-border: outset 5px #3b3618;
+  --big-shadow: 5px 10px rgba(69, 62, 20, 0.66);
+  --big-texture: url('imgs/backgrounds/pixeltex.png');
+  --header-img: url('imgs/other/gruban.jpg'); 
+  --color-big-background: #544c2f;
   --color-text: #034435; 
   --color-accent: #00CC66; 
 }
 
 [data-selected-theme="pastel"] {
-  --color-background: #55dde0;
+  --img-background: url('imgs/backgrounds/pastelbg.gif');
+  --img-background-secondary: url('imgs/backgrounds/secpastelbg.gif');
+  --main-border: ridge 5px #faadf6;
+  --big-border: outset 5px #6383ff;
+  --big-shadow: 5px 10px rgba(243, 68, 255, 0.48);
+  --header-img: url('imgs/other/pasban.jpg');
+  --color-big-background: #fed1ff;
   --color-text: #2B4150;
   --color-accent: #00D4E7;
 } 
 
 [data-selected-theme="kidcore"] { 
-  --color-background: #DFB2F4;
+  --img-background: url('imgs/backgrounds/kidbg.gif');
+  --img-background-secondary: url('imgs/backgrounds/seckidbg.png');
+  --main-border: ridge 5px yellow;
+  --big-border: outset 5px magenta;
+  --big-shadow: 5px 10px rgba(68, 76, 255, 0.54);
+  --big-texture: url('imgs/backgrounds/checktex.png');
+  --header-img: url('imgs/other/kidban.jpg');
+  --color-big-background: hotpink;
   --color-text: #463546;
   --color-accent: #F06EFC;
 }
 
 [data-selected-theme="brainrot"] {
-  --color-background: #FA7D61;
+  --img-background: url('imgs/backgrounds/brainrotbg.gif');
+  --img-background-secondary: url('imgs/backgrounds/secbrainrotbg.jpg');
+  --main-border: ridge 5px blue;
+  --big-border: outset 5px royalblue;
+  --big-shadow: 5px 10px rgba(68, 216, 255, 0.54);
+  --big-texture: url('imgs/backgrounds/randomtex.png');
+  --header-img: url('imgs/other/braban.png') repeat;
+  --color-big-background: LemonChiffon;
   --color-text: #1E1E24;
   --color-accent: #F3601C;
 }
