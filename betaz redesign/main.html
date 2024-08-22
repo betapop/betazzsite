@@ -1,4 +1,4 @@
-<html>
+<html data-selected-theme="">
     <head>
         <title>hi hello</title>
         <link rel="stylesheet" href="style.css">
@@ -8,7 +8,7 @@
         <!-- main -->
         <div style="margin-top: 5%;">
             <!-- left -->
-            <div style="float: left; width: 17%; background-color: white; margin-left: 16%; height: fit-width;">
+            <div style="float: left; width: 16%; background-color: 00FFFFFF; margin-left: 16%; height: fit-width;">
             <!-- first box -->
             <div class="scontain">
                 updates
@@ -21,17 +21,25 @@
                 <!-- theme switcher -->
                 <label for="color">theme</label>
                 <br>
-                <select name="color" onchange="">
+                <select name="color" onchange="function(e)">
                     <option value="grunge" data-theme="grunge">grunge</option>
                     <option value="pastel" data-theme="pastel">pastel</option>
                     <option value="kidcore" data-theme="kidcore">kidcore</option>
                     <option value="brainrot" data-theme="brainrot">brainrot</option>
                 </select>
-                
                 </div>
-                
+                <script>
+                window.test = function(e) {
+                  if (e.value === 'grunge') {
+                    document.getAttribute("grunge").setAttribute("grunge");
+                  } else if (e.value === 'pastel') {
+                    document.getAttribute("pastel").setAttribute("pastel");
+                  } else if (e.value === 'kidcore') {
+                    console.log(e.value);
+                  }
+                </script>
              <!-- img and status -->
-            <div class="scontain" style="height: 33%; overflow: hidden; background-color: white">
+            <div class="scontain-trans" style="height: 33%; overflow: hidden;">
                 <img src="imgs/other/placeholder.png" style="width: 90%">
                 <br>
                 status here :D hello weewoo
@@ -40,37 +48,37 @@
            
             </div>
             <!-- right -->
-            <div style="float: left; width: 50%; background-color: aquamarine; margin-right: 16%; height: fit-width;">
-                
-                <div class="scontain" style="margin-top: 0.8%; margin-bottom: 1%; height: 7%;">
-                header
+            <div class="bigcontain" style="float: left; width: 50%; margin-right: 16%; height: fit-width;">
+                <!-- header -->
+                <div class="bigheader" style="margin-top: 0.8%; margin-bottom: 1%; height: 7%;">
                 </div>
                 
                 <div class="scontain" style="margin-top: 0; height: 48.4%; margin-bottom: 1%; padding: 0;">
                 
-                <div style="float: left; background-color:aqua; width: 20%; height: 100%">
+                <div style="float: left; width: 20%; height: 100%; ">
                 updates
                 </div>
 
                 <div style="float: left; background-color:skyblue; width: 80%; height: 100%">
                 <!-- iframe -->
-                 <iframe src="sitedown.html" title="description" style="height: 99%; width: 100%;"></iframe> 
+                 <iframe class="framin" src="sitedown.html" title="description" style="height: 99%; width: 100%;" allowtransparency = "true"></iframe> 
                 </div>
                     
                 </div>
                 
-                <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-right: 1%; width: 40.5%">
-                bottom
-                </div>
-                <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-left: 2; width: 41.7%">
-                bottom
-                </div>
-            
+                <center>
+                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-right: 1%; width: 39%">
+                    bottom
+                    </div>
+                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-left: 1%; width: 38.7%">
+                    bottom
+                    </div>
+                </center>
             </div>
         </div>
         
         <!-- bottom -->
-            <marquee style="background-color: cadetblue; max-width: 68%">
+            <marquee style="max-width: 68%">
                 <br>
             site made by a goober - nows your chance to be a big shot!
             </marquee>
