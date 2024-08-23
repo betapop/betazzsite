@@ -46,14 +46,60 @@ html {
     height: 22%
 }
 
+.sidebar {
+    background-color: var(--color-secondary);
+    height: 6%;
+    padding: 1%;
+    width: 80%;
+    border: var(--main-border);
+    border-radius: 25px;
+}
+
+a:link {
+  color: var(--color-text);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-accent);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+::selection {
+    background: var(--color-highlight);
+}
+
+#statuscafe {
+    padding: .5em;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+    color: var(--color-accent);
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+    color: var(--color-text);
+}
+
 #scrollbox {
 border: 2px solid var(--color-border);
 border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 border: 3px solid var(--color-border);
 }
 
+.dragme{
+        position:relative;
+        width: 270px;
+        height: 203px;
+        cursor: move;
+    }
+
+
 :root, 
 [data-selected-theme="pastel"] {
+  --img-favicon: url('imgs/favicons/pastel.webp');
   --img-background: url('imgs/backgrounds/pastelbg.gif');
   --img-background-secondary: url('imgs/backgrounds/secpastelbg.gif');
   --img-piclog: url('imgs/text/pas_recentpiclog.gif');
@@ -63,13 +109,14 @@ border: 3px solid var(--color-border);
   --big-shadow: 5px 10px rgba(243, 68, 255, 0.48);
   --header-img: url('imgs/other/pasban.jpg');
   --color-secondary: rgba(255, 255, 255, 0.53);
-  --alt-border: none;
+  --color-highlight: rgba(247, 130, 255, 0.8);
   --color-big-background: #fed1ff;
-  --color-text: #2B4150;
-  --color-accent: #00D4E7;
+  --color-text: #d46ac0;
+  --color-accent: #2e6fbf;
 } 
 
 [data-selected-theme="grunge"] { 
+  --img-favicon: url('imgs/favicons/grunge.webp');
   --img-background: url('imgs/backgrounds/greenbg.gif'); 
   --img-background-secondary: url('imgs/backgrounds/secgreenbg.gif');
   --main-border: ridge 5px #474224;
@@ -79,13 +126,14 @@ border: 3px solid var(--color-border);
   --big-texture: url('imgs/backgrounds/pixeltex.png');
   --header-img: url('imgs/other/gruban.jpg'); 
   --color-secondary: rgba(16, 8, 7, 0.08);
-  --alt-border: ridge 5px solid;
+  --color-highlight: rgba(179, 255, 164, 0.8);
   --color-big-background: #544c2f;
-  --color-text: #034435; 
-  --color-accent: #00CC66; 
+  --color-text: black; 
+  --color-accent: black; 
 }
 
 [data-selected-theme="kidcore"] { 
+  --img-favicon: url('imgs/favicons/kidcore.webp');
   --img-background: url('imgs/backgrounds/kidbg.gif');
   --img-background-secondary: url('imgs/backgrounds/seckidbg.png');
   --main-border: ridge 5px yellow;
@@ -95,13 +143,14 @@ border: 3px solid var(--color-border);
   --big-texture: url('imgs/backgrounds/checktex.png');
   --header-img: url('imgs/other/kidban.jpg');
   --color-secondary: rgba(255, 255, 255, 0.53);
-  --alt-border: none;
+  --color-highlight: rgba(206, 108, 255, 0.8);
   --color-big-background: hotpink;
-  --color-text: #463546;
-  --color-accent: #F06EFC;
+  --color-text: #122e70;
+  --color-accent: #7a0c5b;
 }
 
 [data-selected-theme="brainrot"] {
+  --img-favicon: url('imgs/favicons/brainrot.webp');
   --img-background: url('imgs/backgrounds/brainrotbg.gif');
   --img-background-secondary: url('imgs/backgrounds/secbrainrotbg.jpg');
   --main-border: ridge 5px blue;
@@ -111,13 +160,14 @@ border: 3px solid var(--color-border);
   --big-texture: url('imgs/backgrounds/randomtex.png');
   --header-img: url('imgs/other/braban.png') repeat;
   --color-secondary: rgba(255, 255, 255, 0.73);
-  --alt-border: none;
+  --color-highlight: rgba(163, 243, 255, 0.8);
   --color-big-background: LemonChiffon;
-  --color-text: #1E1E24;
-  --color-accent: #F3601C;
+  --color-text: #947e00;
+  --color-accent: blue;
 }
 
 [data-selected-theme="fish"] {
+  --img-favicon: url('imgs/favicons/fish.webp');
   --img-background: url('imgs/backgrounds/fishbg.gif');
   --img-background-secondary: url('imgs/backgrounds/secfishbg.jpg');
   --main-border: ridge 5px darkblue;
@@ -127,8 +177,8 @@ border: 3px solid var(--color-border);
   --big-texture: url('imgs/backgrounds/bubbletex.png') repeat;
   --header-img: url('imgs/other/fishban.jpg') 0px;
   --color-secondary: rgba(255, 255, 255, 0.33);
-  --alt-border: none;
+  --color-highlight: rgba(255, 230, 163, 0.8);
   --color-big-background: SkyBlue;
-  --color-text: #1E1E24;
-  --color-accent: #F3601C;
+  --color-text: white;
+  --color-accent: #bd4302;
 }
