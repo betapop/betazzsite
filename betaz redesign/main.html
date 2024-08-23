@@ -22,11 +22,14 @@
                 <label for="color">theme</label>
                 <br>
                   <select class="theme-switcher">
-                    <option data-theme="grunge" aria-pressed="true">grunge</option>
-                    <option data-theme="pastel" aria-pressed="false">pastel</option>
+                    <option data-theme="pastel" aria-pressed="true">pastel</option>
+                     <option data-theme="grunge" aria-pressed="false">grunge</option>
                     <option data-theme="kidcore" aria-pressed="false">kidcore</option>
                     <option data-theme="brainrot" aria-pressed="false">brainrot</option>
+                    <option data-theme="fish" aria-pressed="false">fish</option>
                     </select>
+                <script src="script.js"></script> 
+                <!-- old theme changer code, saving just in case
                 <script>
                 const pressedOptionSelector = '[data-theme][aria-pressed="true"]';
                 const defaultTheme = 'grunge';
@@ -65,24 +68,6 @@
                    option.addEventListener('click', handleThemeSelection);
                 });
                 </script>
-                <!--
-                <script>
-                
-                    const handleThemeSelection = (event) => {
-                      const target = event.target;
-                      const theme = target.getAttribute('data-theme');
-                      const isPressed = target.getAttribute('aria-pressed');
-                      document.documentElement.setAttribute("data-selected-theme", theme);
-                    }
-
-                    const themeSwitcher = document.querySelector('.theme-switcher');
-                    const options = themeSwitcher.querySelectorAll('option');
-
-                    options.forEach((option) => {
-                       option.addEventListener('click', handleThemeSelection);
-                    });
-
-                </script>
                 -->
                 </div>
              <!-- img and status -->
@@ -106,9 +91,9 @@
                 updates
                 </div>
 
-                <div style="float: left; background-color:skyblue; width: 80%; height: 100%">
+                <div style="float: left; background-color:skyblue; width: 80%; height: 100%;">
                 <!-- iframe -->
-                 <iframe class="framin" src="sitedown.html" title="description" style="height: 99%; width: 100%;" allowtransparency = "true"></iframe> 
+                 <iframe class="framin" src="display.html" title="description" style="height: 99%; width: 100%;" allowtransparency = "true"></iframe> 
                 </div>
                     
                 </div>
