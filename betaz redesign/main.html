@@ -8,19 +8,78 @@
         <!-- main -->
         <div style="margin-top: 5%;">
             <!-- left -->
-            <div style="float: left; width: 16%; background-color: 00FFFFFF; margin-left: 16%; height: fit-width;">
+            <div style="float: left; width: 16%; background-color: 00FFFFFF; margin-left: 16%; height: fit-width; color: var(--color-accent);">
             <!-- first box -->
             <div class="scontain">
                 updates
                 </div>
                 
             <!-- second box -->
-            <div class="scontain" style="height: 13%">
+            <div class="scontain" style="height: 24%; color: var(--color-accent);">
                 toggles
-                <br><br>
-                <!-- theme switcher -->
-                <label for="color">theme</label>
+                <div style="line-height:50%;"><br></div>
+                <span style="font-size: 60%; color: var(--color-text);">drag me!</span>
                 <br>
+                <!-- dragable -->
+                <img class="dragme" src="imgs/graphics/3ds.webp" style="max-width: 25%; max-height: 30%; object-fit: cover;">
+                <img class="dragme" src="imgs/graphics/ang8.webp" style="max-width: 25%; max-height: 32%; object-fit: cover;">
+                <!-- drag js file
+                <script src="drag.js"></script>
+                -->
+                <!-- 
+                    function startDrag(e) {
+                        // determine event object
+                        if (!e) {
+                            var e = window.event;
+                        }
+                        if(e.preventDefault) e.preventDefault();
+
+                        // IE uses srcElement, others use target
+                        var targ = e.target ? e.target : e.srcElement;
+
+                        if (targ.className != 'dragme') {return};
+                        // calculate event X, Y coordinates
+                            offsetX = e.clientX;
+                            offsetY = e.clientY;
+
+                        // assign default values for top and left properties
+                        if(!targ.style.left) { targ.style.left='0px'};
+                        if (!targ.style.top) { targ.style.top='0px'};
+
+                        // calculate integer values for top and left 
+                        // properties
+                        coordX = parseInt(targ.style.left);
+                        coordY = parseInt(targ.style.top);
+                        drag = true;
+
+                        // move div element
+                            document.onmousemove=dragDiv;
+                        return false;
+
+                    }
+                    function dragDiv(e) {
+                        if (!drag) {return};
+                        if (!e) { var e= window.event};
+                        var targ=e.target?e.target:e.srcElement;
+                        // move div element
+                        targ.style.left=coordX+e.clientX-offsetX+'px';
+                        targ.style.top=coordY+e.clientY-offsetY+'px';
+                        return false;
+                    }
+                    function stopDrag() {
+                        drag=false;
+                    }
+                    window.onload = function() {
+                        document.onmousedown = startDrag;
+                        document.onmouseup = stopDrag;
+                    }
+                -->
+                
+                <br><br>
+                <div style="width: 50%; float: left">theme
+                <!-- theme switcher -->
+                <br>
+                    <div style="line-height:50%;"><br></div>
                   <select class="theme-switcher">
                     <option data-theme="pastel" aria-pressed="true">pastel</option>
                      <option data-theme="grunge" aria-pressed="false">grunge</option>
@@ -70,11 +129,61 @@
                 </script>
                 -->
                 </div>
+                <div style="width: 50%; float: left">
+                    music
+                    <br>
+                    <div data-video="CO97gG3CjLQ" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+                    <script src="https://www.youtube.com/iframe_api"></script>
+                    <script>
+                    function onYouTubeIframeAPIReady() {
+                      var e = document.getElementById("youtube-audio"),
+                        t = document.createElement("img");
+                      t.setAttribute("id", "youtube-icon"),
+                        (t.style.cssText = "cursor:pointer;cursor:hand"),
+                        e.appendChild(t);
+                      var a = document.createElement("div");
+                      a.setAttribute("id", "youtube-player"), e.appendChild(a);
+                      var o = function (e) {
+                        var a = e ? "IDzX9gL.png" : "quyUPXN.png";
+                        t.setAttribute("src", "https://watermelon.crd.co/assets/images/gallery01/a8cd4edf.gif?v=6332de85" + a);
+                      };
+                      e.onclick = function () {
+                        r.getPlayerState() === YT.PlayerState.PLAYING ||
+                        r.getPlayerState() === YT.PlayerState.BUFFERING
+                          ? (r.pauseVideo(), o(!1))
+                          : (r.playVideo(), o(!0));
+                      };
+                      var r = new YT.Player("youtube-player", {
+                        height: "0",
+                        width: "0",
+                        videoId: e.dataset.video,
+                        playerVars: { autoplay: e.dataset.autoplay, loop: e.dataset.loop },
+                        events: {
+                          onReady: function (e) {
+                            r.setPlaybackQuality("small"),
+                              o(r.getPlayerState() !== YT.PlayerState.CUED);
+                          },
+                          onStateChange: function (e) {
+                            e.data === YT.PlayerState.ENDED && o(!1);
+                          }
+                        }
+                      });
+                    }
+                    </script>
+                    <!--
+                    <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+                    -->
+                    <!--
+                    <p><audio controls="" style="width:100px;height:25px;"><source src="MP3LINK"><br></audio></p>
+                    -->
+                </div>
+                </div>
              <!-- img and status -->
-            <div class="scontain-trans" style="height: 33%; overflow: hidden;">
-                <img src="imgs/other/placeholder.png" style="width: 90%">
+            <div class="scontain-trans" style="height: 33%; overflow: hidden; color: var(--color-text);">
+                <img src="imgs/other/placeholder.png" style="width: 70%">
                 <br>
-                status here :D hello weewoo
+                <a href="https://www.imood.com/users/Betapop"><img src="https://moods.imood.com/display/uname-Betapop/trans-1/imood.gif" alt="The current mood of Betapop at www.imood.com" border="0"></a>
+                <div id="statuscafe" style="font-size:70%;"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=betapop" defer></script>
                 </div>
 
            
@@ -87,22 +196,49 @@
                 
                 <div class="scontain" style="margin-top: 0; height: 48.4%; margin-bottom: 1%; padding: 0;">
                 
-                <div style="float: left; width: 20%; height: 100%; ">
-                updates
+                <div style="float: left; width: 20%; height: 100%;">
+                <br>
+                <center>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="display.html" target="myIframe"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp home</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="sitedown.html" target="myIframe"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp blog</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="#"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp links</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="#"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp graphics</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="#"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp fun</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                <div class="sidebar">
+                <a href="#"><div style="width: 14%; height: 75%; background-image: var(--img-favicon); float: left; margin: 2%; margin-left: 5%;"></div><span style="float: right; margin: 2%; ">&nbsp shrines</span></a>
+                </div>
+                <div style="line-height:50%;"><br></div>
+                </center>
                 </div>
 
                 <div style="float: left; background-color:skyblue; width: 80%; height: 100%;">
                 <!-- iframe -->
-                 <iframe class="framin" src="display.html" title="description" style="height: 99%; width: 100%;" allowtransparency = "true"></iframe> 
+                 <iframe name="myIframe" class="framin" src="display.html" title="description" style="height: 99%; width: 100%;" allowtransparency = "true"></iframe> 
                 </div>
                     
                 </div>
                 
                 <center>
-                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-right: 1%; width: 39%">
+                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-right: 1%; width: 39% ; color: var(--color-accent);">
                     bottom
                     </div>
-                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-left: 1%; width: 38.7%">
+                    <div class="scontain" style=" float: left; margin-top: 0; height: 5%; margin-bottom: 1%; margin-left: 1%; width: 38.7%; color: var(--color-accent);">
                     bottom
                     </div>
                 </center>
@@ -110,7 +246,7 @@
         </div>
         
         <!-- bottom -->
-            <marquee style="max-width: 68%">
+            <marquee style="max-width: 50%; color: var(--color-text); margin-right: 17%;">
                 <br>
             site made by a goober - nows your chance to be a big shot!
             </marquee>
